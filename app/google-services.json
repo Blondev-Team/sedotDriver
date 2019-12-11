@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "175804570661",
+    "firebase_url": "https://gosedot-bbc87.firebaseio.com",
+    "project_id": "gosedot-bbc87",
+    "storage_bucket": "gosedot-bbc87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175804570661:android:28f68431f6a4abd9ceb3cc",
+        "android_client_info": {
+          "package_name": "driver.gosedot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175804570661-c51esmi8enu1j2f1paioeo969740513f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "driver.gosedot",
+            "certificate_hash": "ea6e4d451b776339d2b6ce82d3e7bf3bcf25299f"
+          }
+        },
+        {
+          "client_id": "175804570661-do6ee37p7vqbskg8homt9rnuljrfduef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArL3Qqe4NOJ4c0rprpDFPJ_7FWTouFHbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175804570661-do6ee37p7vqbskg8homt9rnuljrfduef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_mylayanan"
+        android:icon="@drawable/ic_tank"
+        android:title="Angkut" />
+
+    <item
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/ic_avatar"
+        android:title="Profil" />
+
+</menu>

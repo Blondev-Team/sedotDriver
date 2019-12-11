@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Salaman Driver</string>
+    <string name="salamLogin">Selamat Datang di Layanan Penyedotan Lumpur Tinja Kabupaten Lampung Selatan</string>
+
+    <string-array name="listLayanan">
+        <item>Pilih</item>
+        <item>LLTT (Layanan Terjadwal)</item>
+        <item>LLTTT (Layanan Tidak Terjadwal)</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="lupa_password">Lupa Kata Sandi</string>
+    <string name="email">Email</string>
+    <string name="email_sudah_digunakan">Alamat email sudah digunakan.</string>
+    <string name="email_tersedia">Alamat email masih tersedia.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
