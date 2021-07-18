@@ -14,6 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -30,14 +35,17 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import driver.gosedot.Kelas.SharedVariable;
 import driver.gosedot.Kelas.UserPreference;
 import driver.gosedot.R;
+import driver.gosedot.base.BaseActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     Button btnLogin;
     TextView tvDaftar;
@@ -47,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     private HttpResponse response;
     UserPreference mUserpref;
     private String iduser;
+
+    String TAG = "loginRequest";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +79,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkValidation();
-            }
-        });
-        tvDaftar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),DaftarActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -102,12 +105,71 @@ public class LoginActivity extends AppCompatActivity {
                     .show();
         }
         else {
-            pDialogLoading.show();
-            doLogin(getEmailId,getPassword);
+            //doLogin(getEmailId,getPassword);
+            loginProcess(getEmailId,getPassword);
         }
 
     }
 
+    private void loginProcess(final String username, final String password){
+        showLoading();
+        String url = SharedVariable.serverURL+"driver/login";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        dismissLoading();
+                        Log.d("loginRequest", "respon : "+response.toString());
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status   = jsonObject.getString("status");
+                            Log.d(TAG,"status : "+status);
+
+                            if (status.equals("OK")){
+
+                                String id_driver  = jsonObject.getString("iddriver");
+                                Log.d(TAG,"iddriver : "+id_driver);
+
+                                mUserPref.setIdUser(id_driver);
+                                mUserPref.setIsLoggedIn("true");
+
+                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            }else if (status.equals("Failed")){
+                                showLongErrorMessage("Login gagal,periksa kembali username atau password anda");
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.d(TAG,"errorJsonObject:"+e.toString());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        dismissLoading();
+                        Log.d("loginRequest", error.toString());
+                        showErrorMessage("Terjadi kesalahan,coba lagi nanti");
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", username);
+                params.put("password", password);
+                return params;
+            }
+        };
+
+
+        addToRequestQueue(stringRequest,"loginRequest");
+    }
 
     private void doLogin(final String getEmailId, final String getPassword){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
