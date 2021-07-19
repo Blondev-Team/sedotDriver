@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sedotDriver.iml" filepath="$PROJECT_DIR$/.idea/modules/sedotDriver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sedotDriver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sedotDriver.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sedotDriver.iml" filepath="$PROJECT_DIR$/.idea/modules/sedotDriver.iml" group="sedotDriver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sedotDriver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sedotDriver.app.iml" group="sedotDriver/app" />
     </modules>
   </component>
 </project>

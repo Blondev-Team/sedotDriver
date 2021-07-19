@@ -55,15 +55,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivProfPict"
-                android:src="@drawable/ic_user"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="center_horizontal" />
-
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -226,7 +217,7 @@
                     android:text="Petugas"></TextView>
 
                 <TextView
-                    android:id="@+id/tvEmail"
+                    android:id="@+id/tvPetugas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -234,7 +225,6 @@
                     android:layout_marginBottom="5dp"
                     android:ellipsize="end"
                     android:text="Ari, Arif, Aqin"
-                    android:maxLines="1"
                     android:textColor="@color/grey_800"
                     android:textSize="16sp" />
 
@@ -253,7 +243,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/btnPilih"
+                    android:id="@+id/btnNavigasi"
                     android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_alignParentLeft="true"

@@ -2,6 +2,7 @@ package driver.gosedot.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -48,8 +49,8 @@ import driver.gosedot.adapter.AdapterDetailAngkut;
 public class DetailPengangkutanActivity extends AppCompatActivity {
 
     ImageView btnBack;
-    Button btnSelesai,btnTutup,btnKeSelesai;
-    TextView tvAlamat,tvJenis,tvHarga,tvNIK;
+    Button btnSelesai,btnTutup,btnKeSelesai,btnNavigasi;
+    TextView tvAlamat,tvJenis,tvHarga,tvNIK,tvPetugas;
     private String alamatKirim;
     BottomSheetBehavior sheetBehavior;
     LinearLayout bottomSheetLayout;
@@ -61,6 +62,7 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
     private HttpResponse response;
     private List<DetailAngkut> angkutList;
     private RequestQueue requestQueue;
+    String latTujuan,longTujuan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +75,12 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
         btnTutup = findViewById(R.id.btnTutup);
         btnSelesai = findViewById(R.id.btnSelesai);
         btnKeSelesai = findViewById(R.id.btnKeSelesai);
+        btnNavigasi = findViewById(R.id.btnNavigasi);
         //rvAngkut = findViewById(R.id.rvPemesanan);
         tvHarga = findViewById(R.id.tvHarga);
         tvJenis = findViewById(R.id.tvNama);
         tvNIK = findViewById(R.id.tvNIK);
+        tvPetugas = findViewById(R.id.tvPetugas);
 
         bottomSheetLayout = findViewById(R.id.bottomSheetLayout);
         sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
@@ -124,6 +128,15 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
                 }
             }
         });
+        btnNavigasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("http://maps.google.com/maps?daddr="+latTujuan+","+longTujuan));
+                startActivity(intent);
+            }
+        });
+
 
         getAngkutan(mUserPref.getIdUser(),intent.getStringExtra("kodeangkut"));
 
@@ -218,6 +231,10 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
                             tvHarga.setText(biaya);
                             tvJenis.setText(nmjenis);
                             tvNIK.setText(nmuser);
+                            tvPetugas.setText(petugas);
+
+                            latTujuan = latitude;
+                            longTujuan = longitude;
 
 
                             DetailAngkut angkut = new DetailAngkut(
