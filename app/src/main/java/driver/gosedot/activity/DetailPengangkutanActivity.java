@@ -228,6 +228,8 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
                             String paket = jojo.getString("paket");
                             String metodebayar = jojo.getString("metodebayar");
                             String petugas = jojo.getString("petugas");
+                            String status_angkut = jojo.getString("status_angkut");
+
                             tvHarga.setText(biaya);
                             tvJenis.setText(nmjenis);
                             tvNIK.setText(nmuser);
@@ -235,6 +237,10 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
 
                             latTujuan = latitude;
                             longTujuan = longitude;
+
+                            if (status_angkut.equals("Selesai")){
+                                disableTombolSelesai();
+                            }
 
 
                             DetailAngkut angkut = new DetailAngkut(
@@ -335,8 +341,9 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
                     Log.d("responData:",""+responData);
 
                     new SweetAlertDialog(DetailPengangkutanActivity.this,SweetAlertDialog.SUCCESS_TYPE)
-                            .setContentText("Penyedotan telah diselesaikan")
+                            .setContentText("Angkutan Diselesaikan")
                             .show();
+                    disableTombolSelesai();
 
                 }else {
                     new SweetAlertDialog(DetailPengangkutanActivity.this, SweetAlertDialog.ERROR_TYPE)
@@ -355,6 +362,14 @@ public class DetailPengangkutanActivity extends AppCompatActivity {
         if (requestQueue == null)
             requestQueue = Volley.newRequestQueue(DetailPengangkutanActivity.this);
         return requestQueue;
+    }
+
+    void disableTombolSelesai(){
+        btnKeSelesai.setText("Angkutan Selesai");
+        btnKeSelesai.setEnabled(false);
+
+        btnSelesai.setText("Angkutan Selesai");
+        btnSelesai.setEnabled(false);
     }
 
 
