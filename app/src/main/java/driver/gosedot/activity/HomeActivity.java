@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    void loadSpesificFragment(String fragmentName){
+    public void loadSpesificFragment(String fragmentName){
 
         if (fragmentName.equals("home")){
             goToFragment(fragmentHome,true);

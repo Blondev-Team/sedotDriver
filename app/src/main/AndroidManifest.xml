@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
 
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,8 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon"
         android:theme="@style/AppTheme">
+        <uses-library android:name ="org.apache.http.legacy" android:required ="false"/>
+
         <activity android:name="driver.gosedot.activity.DetailKategoriActivity"></activity>
         <activity
             android:name="driver.gosedot.activity.SedotBiasaActivity"

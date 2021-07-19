@@ -161,17 +161,17 @@ public class FragmentProfil extends Fragment {
                             String  email = jojo.getString("email");
                             String  nohp = jojo.getString("nohp");
                             String  alamat = jojo.getString("alamat");
-                            String  photo = jojo.getString("photo");
+                            //String  photo = jojo.getString("photo");
 
                             tvName.setText(nmuser);
                             tvEmail.setText(email);
                             tvPhone.setText(nohp);
 
-                            if (photo.length() > 0){
+                            /*if (photo.length() > 0){
                                 Glide.with(getActivity())
                                         .load(photo)
                                         .into(ivProfPict);
-                            }
+                            }*/
                         }
 
 

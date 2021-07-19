@@ -41,6 +41,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import driver.gosedot.Kelas.SharedVariable;
 import driver.gosedot.Kelas.UserPreference;
 import driver.gosedot.R;
+import driver.gosedot.activity.HomeActivity;
 
 
 /**
@@ -81,8 +82,7 @@ public class FragmentHome extends Fragment {
         rlDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),FragmentProfil.class);
-                startActivity(intent);
+                ((HomeActivity)getActivity()).loadSpesificFragment("profil");
             }
         });
 
