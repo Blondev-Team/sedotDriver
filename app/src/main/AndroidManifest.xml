@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="driver.gosedot">
+    package="driver.salaman">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -27,16 +27,16 @@
         android:theme="@style/AppTheme">
         <uses-library android:name ="org.apache.http.legacy" android:required ="false"/>
 
-        <activity android:name="driver.gosedot.activity.DetailKategoriActivity"></activity>
+        <activity android:name="driver.salaman.activity.DetailKategoriActivity"></activity>
         <activity
-            android:name="driver.gosedot.activity.SedotBiasaActivity"
+            android:name="driver.salaman.activity.SedotBiasaActivity"
             android:label="Layanan Sedot Biasa" />
         <activity
-            android:name="driver.gosedot.activity.HomeActivity"
+            android:name="driver.salaman.activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="driver.gosedot.activity.DetailPengangkutanActivity"
+            android:name="driver.salaman.activity.DetailPengangkutanActivity"
             android:label="Detail Pengangkutan"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
@@ -52,16 +52,16 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="driver.gosedot.activity.MapsActivity"
+            android:name="driver.salaman.activity.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name="driver.gosedot.activity.PemesananPenyedotanActivity"
+            android:name="driver.salaman.activity.PemesananPenyedotanActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="driver.gosedot.activity.JenisPelangganActivity"
+            android:name="driver.salaman.activity.JenisPelangganActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="driver.gosedot.activity.LoginActivity"
+            android:name="driver.salaman.activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,13 +70,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="driver.gosedot.activity.BerandaActivity"
+            android:name="driver.salaman.activity.BerandaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="driver.gosedot.MainActivity"
+            android:name="driver.salaman.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="driver.gosedot.activity.DaftarActivity"
+            android:name="driver.salaman.activity.DaftarActivity"
             android:label="Daftar Akun" />
     </application>
 

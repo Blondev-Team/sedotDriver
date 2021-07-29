@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBg"
-    tools:context="driver.gosedot.activity.PemesananPenyedotanActivity">
+    tools:context="driver.salaman.activity.PemesananPenyedotanActivity">
 
     <RelativeLayout
         android:id="@+id/llToolbar"

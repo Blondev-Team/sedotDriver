@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:175804570661:android:28f68431f6a4abd9ceb3cc",
         "android_client_info": {
-          "package_name": "driver.gosedot"
+          "package_name": "driver.salaman"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "175804570661-c51esmi8enu1j2f1paioeo969740513f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "driver.gosedot",
+            "package_name": "driver.salaman",
             "certificate_hash": "ea6e4d451b776339d2b6ce82d3e7bf3bcf25299f"
           }
         },
